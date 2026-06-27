@@ -26,12 +26,15 @@ def on_startup() -> None:
 
 @app.get("/health")
 def health() -> dict:
+    import os
     return {
         "status": "ok",
         "app": settings.app_name,
         "env": settings.app_env,
         "cors": settings.cors_origins,
-        "cors_list": settings.cors_origin_list
+        "cors_list": settings.cors_origin_list,
+        "os_env_app_env": os.environ.get("APP_ENV"),
+        "os_env_cors_origins": os.environ.get("CORS_ORIGINS")
     }
 
 
