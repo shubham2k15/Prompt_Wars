@@ -25,8 +25,14 @@ def on_startup() -> None:
 
 
 @app.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok", "app": settings.app_name}
+def health() -> dict:
+    return {
+        "status": "ok",
+        "app": settings.app_name,
+        "env": settings.app_env,
+        "cors": settings.cors_origins,
+        "cors_list": settings.cors_origin_list
+    }
 
 
 app.include_router(api_router)
