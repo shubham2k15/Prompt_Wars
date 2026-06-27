@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-canvas text-ink font-sans antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(134, 183, 182, 0.24), transparent 28%),
+    radial-gradient(circle at 85% 18%, rgba(244, 169, 138, 0.18), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(54, 95, 93, 0.12), transparent 32%),
+    linear-gradient(135deg, rgba(255,255,255,0.88), rgba(245,248,247,0.7));
+  min-height: 100vh;
+}
+
+a {
+  @apply text-inherit no-underline;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #86b7b6 transparent;
+}
+
+.glass-card {
+  @apply rounded-[28px] border border-white/50 bg-white/65 shadow-float backdrop-blur;
+}
+
+.pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/80 px-4 py-2 text-sm font-medium text-ink/80;
+}
+
+.primary-button {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-pine px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-pine/20 transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.secondary-button {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/10 bg-white/80 px-4 py-3 text-sm font-semibold text-ink/75 transition hover:bg-white;
+}
+
+.section-title {
+  @apply font-display text-3xl text-pine md:text-4xl;
+}
